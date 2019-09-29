@@ -6,6 +6,10 @@ const rename = require('gulp-rename');
 const connect = require('gulp-connect');
 gulpSass.compiler = require('node-sass');
 
+gulp.task('connect', () => {
+    return connect.server();
+})
+
 gulp.task('sass', () => {
     return gulp.src('./scss/main.scss')
         .pipe(sourcemaps.init())
@@ -36,8 +40,9 @@ gulp.task('template', () => {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', () => {
-    connect.server();
+gulp.task('default', (done) => {
+    gulp.task('connect')();
     gulp.watch('./scss/**/*.scss', gulp.series(['sass']));
     gulp.watch('./templates/**/*.hbs', gulp.series(['template']));
+    done();
 });
