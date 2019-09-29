@@ -1,0 +1,14 @@
+<header>
+    <div class="container">
+        <a href="#"><img src="./images/headerLogo.png" class="headerLogo"></a>
+        <nav class="headerMenu">
+            <ul class="menu">
+                <li><a {{#ifvalue activeItem  value='home'}}class="activeMenu"{{/ifvalue}} href="./index.html">Головна</a></li>
+                <li><a {{#ifvalue activeItem  value='about'}}class="activeMenu"{{/ifvalue}} href="./aboutUs.html">Про нас</a></li>
+                <li><a {{#ifvalue activeItem  value='production'}}class="activeMenu"{{/ifvalue}} href="./production.html">Продукція</a></li>
+                <li><a {{#ifvalue activeItem  value='contacts'}}class="activeMenu"{{/ifvalue}} href="./contacts.html">Контакти</a></li>
+                <li id="openPopup"><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+            </ul>
+        </nav>
+    </div>
+</header>

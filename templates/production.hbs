@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+{{> head title="Production"}}
+
+<body>
+
+    <div class="wrapper">
+
+        {{> header activeItem="production"}}
+
+        {{>
+            hero
+            className="production"
+            logo="LoveCake"
+            slogan="For You"
+        }}
+
+        <div class="productionText">
+            <p class="text"><a href="#cakesGallery">Обирайте серед наявних капкейків</a> <a href="#cakeConstructor">або створюйте їх на свій
+                    смак</a></p>
+
+            <div class="productionText2"></div>
+        </div>
+
+        <div class="cakesGallery" id="cakesGallery">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/1.jpg" alt="..."></div>
+                        <div class="imgBack">
+                            <p class="cakeTitle">М'ятний капкейк</p>
+                            <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник</p>
+                            <p class="cost"><span>Вартість: </span>30 грн</p>
+                            <button class="btnBuy">У кошик</button>     
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/2.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/3.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/4.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/5.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/6.jpg" alt="..."></div>
+                       <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/7.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 thumb">
+                        <div class="imgFront"><img class="img-fluid" src="./images/8.jpg" alt="..."></div>
+                        <div class="imgBack"><h1></h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cakeConstructor" id="cakeConstructor">
+            <div class="cupcakeImage img-fluid">
+                <img src="./images/constructor.png" alt="">
+            </div>
+
+        </div>
+
+        {{> footer}}
+        {{> cart}}
+
+    </div>
+
+   {{> scripts}}
+
+</body>
+
+</html>

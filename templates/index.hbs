@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ua">
+{{> head title='LoveCake'}}
+<body>
+
+  <div class="wrapper">
+    {{> header activeItem="home"}}
+
+    {{>
+        hero
+        className="main"
+        logo="LoveCake"
+        slogan="For You"
+    }}
+
+    <div class="mainContent">
+     <div class="container-fluid cards-wrap">
+        <!-- <div> -->
+          <h1>Наші солодкі пропозиції</h1>
+          <!-- </div> -->
+          <div class="card-deck">
+            {{> 
+                card
+                img="./images/cake1.png"
+                alt="cake1"
+                title="Завжди дуже смачно"
+                description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+            }}
+            {{> 
+                card
+                img="./images/cake2.png"
+                alt="cake2"
+                title="Цікаве та стильне оформлення"
+                description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+            }}
+            {{> 
+                card
+                img="./images/cake3.png"
+                alt="cake3"
+                title="Лише натуральні інгредієнти"
+                description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+            }}
+          </div>
+     </div>
+    </div>
+
+    {{> footer}}
+
+    {{> cart}}
+
+</div>
+
+  {{> scripts}}
+
+</body>
+
+</html>

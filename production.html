@@ -2,19 +2,18 @@
 <html lang="ua">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Production</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Production</title>
+
+  <link rel="stylesheet" href="./css/main.css">
 </head>
-
 <body>
 
     <div class="wrapper">
@@ -24,24 +23,21 @@
                 <a href="#"><img src="./images/headerLogo.png" class="headerLogo"></a>
                 <nav class="headerMenu">
                     <ul class="menu">
-                        <li><a href="./index.html">Головна</a></li>
-                        <li><a href="./aboutUs.html">Про нас</a></li>
-                        <li><a class="activeMenu" href="#">Продукція</a></li>
-                        <li><a href="./contacts.html">Контакти</a></li>
-                        <li><a href="./order.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                        <li><a  href="./index.html">Головна</a></li>
+                        <li><a  href="./aboutUs.html">Про нас</a></li>
+                        <li><a class="activeMenu" href="./production.html">Продукція</a></li>
+                        <li><a  href="./contacts.html">Контакти</a></li>
+                        <li id="openPopup"><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
                     </ul>
                 </nav>
             </div>
         </header>
-
-        <div class="bgProductionImage">
+        <div class="hero production">
             <div class="logoSloganName">
                 <div class="logo">LoveCake</div>
                 <div class="slogan">For You</div>
             </div>
         </div>
-
-
         <div class="productionText">
             <p class="text"><a href="#cakesGallery">Обирайте серед наявних капкейків</a> <a href="#cakeConstructor">або створюйте їх на свій
                     смак</a></p>
@@ -108,23 +104,76 @@
                     <div class="year">2019</div>
                 </div>
             </div>
-        </footer>
-
+        </footer>        <div class="popup cart">
+            <div class="popup__window">
+                <div class="popup-close close-icon">&times;</div>
+                <div class="popup-content">
+                    <div class="page-header">Кошик</div>
+                    <div class="product-list-wrap">
+                        <ul class="product-list scrolling">
+                            <li data-id="" class="product-list__item">
+                                <a href="" class="product__image">
+                                    <img src="" title="" alt="">
+                                </a>
+                                <div class="product__column">
+                                    <a href="">
+                                        <div class="product__header">Шоколадний капкейк з полуницею</div>
+                                    </a>
+                                    <div class="product__count-list">
+                                        <div class="product__button-decrease">
+                                            ::before
+                                            "-"
+                                        </div>
+                                        <input type="text" readonly name="count[]" value="1">
+                                        <div class="product__button-increase">
+                                            ::before
+                                            "+"
+                                            ::after
+                                        </div>
+                                    </div>
+                                    <div class="product__button-remove">&times</div>
+                                    <div class="product__price-column">
+                                        <div class="product__price">0 грн</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-list__result">
+                        <div class="discount" style="display: none">
+                            <strong></strong>
+                            <span>
+                                <strong>0</strong>
+                                грн
+                            </span>
+                        </div>
+                        <div class="total">
+                            Разом:
+                            <span>
+                                <strong>0</strong>
+                                грн
+                            </span>
+                        </div>
+                    </div>
+        
+                    <div class="align-center">
+                        <div data-location="/checkout/" class="button">Оформити замовлення</div>
+                    </div>
+                    <div class="align-center">
+                        <div class="link">Продовжити покупки</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <!-- <script src="//code.jquery.com/jquery-3.3.1.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
-
-
+   <script src="./script/cart.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+       crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+       crossorigin="anonymous"></script>
 </body>
 
 </html>

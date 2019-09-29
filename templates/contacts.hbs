@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ua">
+{{> head title="Contacts"}}
+<body>
+
+    <div class="wrapper">
+
+        {{> header activeItem="contacts"}}
+
+        {{>
+            hero
+            className="contact"
+            logo="CupCakes"
+            slogan="For You"
+        }}
+
+        <div class="contactsContent">
+
+           <h1>Наші капкейки вже чекають на вас</h1>
+
+           <div class="contactsMain">
+
+                <div class="adress-tel-email">
+                    <ul>
+                        <li><a href="https://goo.gl/maps/WmGyMFLSoThKUkBj9" target="_blank"><h2>АДРЕСА</h2><p>Київська обл., м. Боярка,</br> вул. Пастернака, 85б</p></a></li>
+                        <li><a href="tel:380636541115"><h2>ТЕЛЕФОН</h2><p>+38 (063) 654 11 15</p></a></li>
+                        <li><a href="tel:380446541115"><h2>ФАКС</h2><p>+38 (044) 654 11 15</p></a></li>
+                        <li><a href="mailto:lovecake@gmail.com" target="_blank"><h2>EMAIL</h2><p>lovecake@gmail.com</p></a></li>
+                </div>
+
+                <div class="contactsForm">
+                    <form class="transparent">
+                        <div class="formInner">
+                            <h3>ЧЕКАЄМО НА ВАШІ ЗАПИТАННЯ</h3>
+                            <label for="username">Ваше ім'я</label>
+                            <input type="text" id="username">
+                            <label for="email">Email</label>
+                            <input id="email" type="email">
+                            <label for="message">Текст повідомлення</label>
+                            <textarea name="message" id="message"></textarea>
+                            <input type="submit" id="submitButton" value="Надіслати">
+                        </div>
+                    </form>
+                </div>
+              
+            </div>
+
+        </div>
+
+        {{> footer}}
+        {{> cart}}
+
+    </div>
+
+   {{> scripts}}
+</body>
+</html>
