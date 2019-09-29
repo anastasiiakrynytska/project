@@ -1,0 +1,65 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+.menu {
+    float: right;
+    margin-right: 10px;
+}
+.headerLogo {
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 10px;
+}   
+.headerMenu {
+    display: flex;
+    margin: auto 0 auto auto;
+}
+.headerMenu li {
+    display: inline;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $mainColor1;
+    margin-right: 20px;
+}
+.logo {
+    font-family: 'Emilys Candy', cursive;
+    color: $mainColor1;
+    font-size: 80px;
+}
+.slogan {
+    font-family: 'Sacramento', cursive;
+    color: $mainColor1;
+    text-align: center;
+    font-size: 30px;
+}
+.menu a {
+    color: $mainColor1;
+}
+a.activeMenu {
+    color: $mainColor2;
+}
+@media (max-width: 960px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .headerMenu li {
+        margin-right: 0;
+    }
+}
+@media (max-width: 359px) {
+    .logo {
+        font-size: 60px;
+    }
+}

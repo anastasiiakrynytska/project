@@ -1,0 +1,53 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+.card-img-top {
+    height: 300px;
+    width: 300px;
+}
+.card-deck .card {
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    border: none;
+}
+.card-body {
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.card-title {
+    font-family: $mainFont;
+    font-size: 24px;
+    color: $mainColor2;
+}
+.card-text {
+    font-family: $textFont;
+}
+.card-deck {
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+@media (max-width: 1023px) {
+    .card-deck {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 960px) {
+    .card-deck {
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 359px) {
+    
+    .card-img-top{
+        width: 200px;
+        height: 200px;
+    }
+}

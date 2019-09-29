@@ -1,0 +1,67 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+.aboutUsText {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-image: url(../images/aboutUs2.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.aboutUsText p {
+    margin-left: 50px;
+    margin-right: 650px;
+    color: white;
+    position: relative;
+    font-size: 17px;
+    padding: 30px;
+    font-family: "Open Sans", sans-serif;
+    z-index: 2;
+    // text-shadow: 1px 1px 0px rgba(0,0,0,0.2);  
+}
+.aboutUsContent {
+    margin-top: 80px;
+    background-color: #ffffff;
+    margin-bottom: 80px;
+}
+@media (max-width: 1250px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 500px;
+    }
+}
+@media (max-width: 960px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 380px;
+    }
+    .aboutUsText {
+        height: auto;
+    }
+}
+@media (max-width: 720px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 300px;
+    }  
+}
+@media (max-width: 630px) {
+    .aboutUsText p {
+        margin: 50px;
+    }
+}
+.aboutUsText2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00000026;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+

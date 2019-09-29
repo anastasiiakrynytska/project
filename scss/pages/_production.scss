@@ -1,0 +1,101 @@
+.thumb img {
+    filter: none;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+}
+.thumb {
+    padding: 0;
+    position: relative;
+}
+.productionText {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-image: url(..//images/production2.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.text {
+    font-family: $mainFont;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid $mainColor2;
+    color: $mainColor2;
+    background-color: #ffffffc7;
+    text-align: center;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+.text a:hover {
+    text-decoration: underline;
+}
+.cakeConstructor {
+    height: 100vh;
+}
+.cupcakeImage img {
+    width: 500px;
+}
+@media (max-width: 1100px) {
+    .text {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+.thumb img:hover {
+    border: 2px solid $mainColor2;
+}
+.imgBack {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    filter: none;
+    border-radius: 5px;
+    border: 2px solid $mainColor2;
+    padding: 5px;
+}
+.thumb:hover .imgFront {
+    transform: rotateY(180deg);
+}
+.thumb:hover .imgBack {
+    transform: rotateY(0deg);
+}
+.thumb .imgBack {
+    transform: rotateY(-180deg);
+}
+.thumb .imgFront, .thumb .imgBack {
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.cakeTitle {
+    color: $mainColor2;
+    font-size: 26px;
+}
+.ingredients span {
+    color: $mainColor2;
+}
+.cost span {
+    color: $mainColor2;
+}
+.imgBack {
+    text-align: center;
+}
+
+
+

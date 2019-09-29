@@ -1,0 +1,27 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+
+footer {
+    height: 80px;
+    background-color: $mainColor2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+.copyright {
+   margin-left: auto;
+   margin-right: auto;
+}
+footer .logo {
+    font-size: 20px;
+}
+footer .slogan {
+    font-size: 12px;
+}
+footer .year {
+    font-size: 12px;
+    font-family: $logoFont;
+    color: $mainColor1;
+    text-align: center;
+}
