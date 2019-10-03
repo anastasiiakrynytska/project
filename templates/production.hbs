@@ -17,7 +17,8 @@
         }}
 
         <div class="productionText">
-            <p class="text"><a href="#cakesGallery">Обирайте серед наявних капкейків</a> <a href="#cakeConstructor">або створюйте їх на свій
+            <p class="text"><a href="#cakesGallery">Обирайте серед наявних капкейків</a> <a href="#cakeConstructor">або
+                    створюйте їх на свій
                     смак</a></p>
 
             <div class="productionText2"></div>
@@ -26,60 +27,95 @@
         <div class="cakesGallery" id="cakesGallery">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/1.jpg" alt="..."></div>
-                        <div class="imgBack">
-                            <p class="cakeTitle">М'ятний капкейк</p>
-                            <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник</p>
-                            <p class="cost"><span>Вартість: </span>30 грн</p>
-                            <button data-pid="1" class="btnBuy">У кошик</button>     
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/2.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/3.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/4.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/5.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/6.jpg" alt="..."></div>
-                       <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/7.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/8.jpg" alt="..."></div>
-                        <div class="imgBack"><h1></h1></div>
-                    </div>
-                </div>
+                    {{> 
+                        cupcake
+                        img="./images/1.jpg"
+                        alt="..."
+                        title="М'ятний капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник"
+                        price="50"
+                        button="1"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/2.jpg"
+                        alt="..."
+                        title="Святковий капкейк"
+                        ingredients="борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад"
+                        price="50"
+                        button="2"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/3.jpg"
+                        alt="..."
+                        title="Вершковий капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи"
+                        price="50"
+                        button="3"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/4.jpg"
+                        alt="..."
+                        title="Полунично-шоколадний капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, полуниця, сметана, молоко, білий шоколад, темний шоколад"
+                        price="50"
+                        button="4"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/5.jpg"
+                        alt="..."
+                        title="Шоколадний капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад"
+                        price="50"
+                        button="5"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/6.jpg"
+                        alt="..."
+                        title="Малиновий капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник"
+                        price="50"
+                        button="6"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/7.jpg"
+                        alt="..."
+                        title="Горіховий капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад"
+                        price="50"
+                        button="7"
+                    }}
+                    {{> 
+                        cupcake
+                        img="./images/8.jpg"
+                        alt="..."
+                        title="Ожиновий капкейк"
+                        ingredients="борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник"
+                        price="50"
+                        button="8"
+                    }}
             </div>
         </div>
+    </div>
 
-        <div class="cakeConstructor" id="cakeConstructor">
+    {{!-- <div class="cakeConstructor" id="cakeConstructor">
             <div class="cupcakeImage img-fluid">
                 <img src="./images/constructor.png" alt="">
             </div>
 
-        </div>
+        </div> --}}
 
-        {{> footer}}
-        {{> cart}}
+    {{> footer}}
+    {{> cart}}
 
     </div>
 
-   {{> scripts}}
+    {{> scripts}}
 
 </body>
 

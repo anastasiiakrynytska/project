@@ -53,7 +53,7 @@
     border: 2px solid $mainColor2;
 }
 .imgBack {
-    background-color: #fff;
+    background-color: $mainColor2;
     height: 100%;
     width: 100%;
     cursor: pointer;
@@ -65,7 +65,13 @@
     filter: none;
     border-radius: 5px;
     border: 2px solid $mainColor2;
-    padding: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 .thumb:hover .imgFront {
     transform: rotateY(180deg);
@@ -84,18 +90,35 @@
     box-sizing: border-box;
 }
 .cakeTitle {
-    color: $mainColor2;
+    color: white;
     font-size: 26px;
+    font-family: $mainFont; 
+    text-transform: uppercase;
+}
+.ingredients, .price {
+    font-family: $textFont;
 }
 .ingredients span {
+    color: white;
+    text-transform: uppercase; 
+}
+.price span {
+    color: white;
+    text-transform: uppercase; 
+}
+.btnBuy {
+    background-color: white;
     color: $mainColor2;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    text-transform: uppercase; 
+    font-weight: 550;
 }
-.cost span {
-    color: $mainColor2;
+.btnBuy:hover {
+    border: 1px solid $mainColor2;
 }
-.imgBack {
-    text-align: center;
-}
+
 
 
 

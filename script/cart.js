@@ -62,11 +62,11 @@ function createProduct(product, quantity) {
     productCountList.appendChild(productButtonIncrease);
     productColumn.appendChild(productCountList);
     
-    var productButtonRemove = createElement('div', 'product__button-remove', null, '&times;');
+    var productButtonRemove = createElement('div', 'product__button-remove', null, '×');
     productColumn.appendChild(productButtonRemove);
     
     var productPriceColumn = createElement('div', 'product__price-column');
-    var productPrice = createElement('div', 'product__price', null, product.price + ' грн');
+    var productPrice = createElement('div', 'product__price', null, product.price * product.quantity + ' грн');
     productPriceColumn.appendChild(productPrice);
     productColumn.appendChild(productPriceColumn);
 
@@ -97,9 +97,51 @@ var products = {
     },
     '2': {
         id: 2,
-        name: 'ppp капкейк',
+        name: 'Святковий капкейк',
         img: './images/2.jpg',
-        ingredients: 'борошно',
+        ingredients: 'борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад',
+        price: 50
+    },
+    '3': {
+        id: 3,
+        name: 'Вершковий капкейк',
+        img: './images/3.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи',
+        price: 50
+    },
+    '4': {
+        id: 4,
+        name: 'Полунично-шоколадний капкейк',
+        img: './images/4.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, полуниця, сметана, молоко, білий шоколад, темний шоколад',
+        price: 50
+    },
+    '5': {
+        id: 5,
+        name: 'Шоколадний капкейк',
+        img: './images/5.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад',
+        price: 50
+    },
+    '6': {
+        id: 6,
+        name: 'Малиновий капкейк',
+        img: './images/6.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник',
+        price: 50
+    },
+    '7': {
+        id: 7,
+        name: 'Горіховий капкейк',
+        img: './images/7.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад',
+        price: 50
+    },
+    '8': {
+        id: 8,
+        name: 'Ожиновий капкейк',
+        img: './images/8.jpg',
+        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник',
         price: 50
     }
 };
@@ -128,6 +170,16 @@ CartService.prototype.add = function(product) {
     }
     localStorage.setItem(this.storageName, JSON.stringify(data));
 }
+
+CartService.prototype.increase = function(productId) {
+    var data = this.readAll();
+    productId = productId.toString();
+    if(data[productId]) {
+        ++data[productId].quantity;
+        localStorage.setItem(this.storageName, JSON.stringify(data));
+    }
+}
+
 CartService.prototype.decrease = function(productId) {
     var data = this.readAll();
     productId = productId.toString();
@@ -146,11 +198,58 @@ CartService.prototype.remove = function(productId) {
 }
 
 
-function Cart(selector) {
-    this.cart = document.querySelector(selector);
+function Cart(productsSelector, totalsSelector) {
+    this.cart = document.querySelector(productsSelector);
+    this.total = document.querySelector(totalsSelector);
     this.storage = new CartService();
     this.products = Object.values(this.storage.readAll());
+    this.listenEvents();
     this.render();
+}
+
+Cart.prototype.listenEvents = function() {
+    if(this.cart) {
+        function incDecListener(e) {
+            var t = e.target;
+            if(t.classList.contains('product__button-decrease')) {
+                var parent = t.parentNode.parentNode.parentNode;
+                var productId = parent.getAttribute('data-id');
+                this.storage.decrease(productId);
+                this.products = Object.values(this.storage.readAll());
+                var input = parent.querySelector('input');
+                var value = parseInt(input.value);
+                if(value > 1) {
+                    input.value = --value;
+                }
+                this.render();
+            }
+
+            if(t.classList.contains('product__button-increase')) {
+                var parent = t.parentNode.parentNode.parentNode;
+                var productId = parent.getAttribute('data-id');
+                this.storage.increase(productId);
+                this.products = Object.values(this.storage.readAll());
+                var input = parent.querySelector('input');
+                input.value = ++input.value;
+                this.render();
+
+            }
+
+            if(t.classList.contains('product__button-remove')) {
+                var parent = t.parentNode.parentNode;
+                var productId = parent.getAttribute('data-id');
+                cart.remove(productId);
+            }
+        }
+        this.cart.addEventListener('click', incDecListener.bind(this));
+    }
+}
+
+Cart.prototype.calculateTotals = function() {
+    var total = this.products.reduce(function(prev, curr){
+        return prev + curr.price * curr.quantity;
+    }, 0);
+    this.total.innerHTML = total + ' грн';
 }
 
 Cart.prototype.add = function(product) {
@@ -167,10 +266,15 @@ Cart.prototype.remove = function(productId) {
 
 Cart.prototype.render = function() {
     this.cart.innerHTML = '';
-    renderProducts(this.products, this.cart);   
+    renderProducts(this.products, this.cart);
+    this.calculateTotals();   
 }
 
-var cart = new Cart('.product-list');
+Cart.prototype.show = function() {
+    toVisible();
+}
+
+var cart = new Cart('.product-list', '.product-list__result .total span');
 
 var g = document.querySelector('#cakesGallery');
 if(g) {
@@ -179,10 +283,10 @@ if(g) {
         if(t.classList.contains('btnBuy')) {
             var product = products[t.getAttribute('data-pid')];
             cart.add(product);
+            cart.show();
         }
     }); 
 }
-
 
 
 let openPopup = document.querySelector("#openPopup");
