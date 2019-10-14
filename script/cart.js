@@ -1,253 +1,143 @@
-/**
- * 
- * @param {string} elementName
- * @param {string} [className] 
- * @param {string} [id] 
- * @param {Array<{name: string, value: string}>} [attributes] Array of key-value pairs. 
- * @param {string} [elementText] 
- */
-function createElement(elementName, className, attributes, elementText) {
-    var el = document.createElement(elementName.toUpperCase());
-    if(className) {
-        el.className = className;
+class Cart {
+    constructor(selector) {
+        this.storage = new CartServcie();
+        this.products = Object.values(this.storage.readAll());
+
+        this.popup = document.querySelector(selector);
+        this.cart = this.popup.querySelector(".product-list");
+        this.total = this.popup.querySelector(
+            ".product-list__result .total span"
+        );
+        this.closeIcon = this.popup.querySelector(".popup-close");
+        this.orderButton = this.popup.querySelector(".align-center .button");
+        this.continueButton = this.popup.querySelector(".align-center .link");
+
+        this.listenEvents();
+        this.render();
     }
-    if (attributes && attributes.length) {
-        attributes.forEach(function (attr) {
-            el.setAttribute(attr.name, attr.value);
+
+    incDecListener(e) {
+        const t = e.target;
+        const parent = t.parentNode.parentNode.parentNode;
+        const productId = parent.getAttribute("data-id");
+        const productPrice = parent.getAttribute("data-price");
+        const input = parent.querySelector("input");
+        const value = parseInt(input.value);
+        const productPriceDiv = parent.querySelector(".product__price");
+
+        if (t.classList.contains("product__button-decrease")) {
+            if (value > 1) {
+                input.value = value - 1;
+            }
+            this.decrease(productId);
+        }
+
+        if (t.classList.contains("product__button-increase")) {
+            input.value = +input.value + 1;
+            this.increase(productId);
+        }
+        productPriceDiv.innerHTML = productPrice * input.value;
+        this.renderTotals();
+    }
+
+    removeListener(e) {
+        const t = e.target;
+        if (t.classList.contains("product__button-remove")) {
+            var parent = t.parentNode.parentNode;
+            var productId = parent.getAttribute("data-id");
+            cart.remove(productId);
+        }
+    }
+
+    listenEvents() {
+        const listeners = e => {
+            this.incDecListener(e);
+            this.removeListener(e);
+        };
+
+        this.cart.addEventListener("click", listeners);
+
+        this.closeIcon.addEventListener("click", () => {
+            this.storage.addAll(this.products);
+        });
+
+        this.orderButton.addEventListener("click", () => {
+            this.storage.addAll(this.products);
+        });
+
+        this.continueButton.addEventListener("click", () => {
+            this.storage.addAll(this.products);
         });
     }
-    el.textContent = elementText;
-    return el;
-}
 
-/**
- * 
- * @param {Object} product 
- * @param {string} product.name
- * @param {number} product.price
- * @param {string} product.ingredients
- * @param {number} product.id
- * @param {string} product.img
- * @param {number} product.quantity
- */
-function createProduct(product, quantity) {
-    var li = createElement(
-        'li',
-        'product-list__item',
-        [{ name: 'data-id', value: product.id }],
-    );
-
-    var imgWrap = createElement('a', 'product__image');
-    var img = createElement('img', null, [{ name: 'src', value: product.img }, { name: 'alt', value: '' }]);
-    imgWrap.appendChild(img);
-    li.appendChild(imgWrap);
-    
-    var productColumn = createElement('div', 'product__column');
-    
-    var productColumnA = createElement('a');
-    var productHeader = createElement('div', 'product__header', null, product.name);
-    productColumnA.appendChild(productHeader);
-    productColumn.appendChild(productColumnA);
-
-    var productCountList = createElement('div', 'product__count-list');
-    var productButtonDecrease = createElement('div', 'product__button-decrease', null, '-');
-    var input = createElement(
-        'input', 
-        null, 
-        [{name: 'readonly', value: true}, {name: 'value', value: product.quantity}]
-    );
-    var productButtonIncrease = createElement('div', 'product__button-increase', null, '+');
-    productCountList.appendChild(productButtonDecrease);
-    productCountList.appendChild(input);
-    productCountList.appendChild(productButtonIncrease);
-    productColumn.appendChild(productCountList);
-    
-    var productButtonRemove = createElement('div', 'product__button-remove', null, '×');
-    productColumn.appendChild(productButtonRemove);
-    
-    var productPriceColumn = createElement('div', 'product__price-column');
-    var productPrice = createElement('div', 'product__price', null, product.price * product.quantity + ' грн');
-    productPriceColumn.appendChild(productPrice);
-    productColumn.appendChild(productPriceColumn);
-
-    li.appendChild(productColumn);
-    
-    return  li;
-}
-
-/**
- * 
- * @param {Array} products 
- */
-function renderProducts(products, cart) {
-    var fragment = document.createDocumentFragment();
-    products.forEach(function(product) {
-        fragment.appendChild(createProduct(product));
-    });
-    cart.appendChild(fragment);
-}
-
-function parseProduct(dataProduct) {
-    var product = {};
-    product.id = dataProduct.getAttribute('data-pid');
-    product.name = dataProduct.getAttribute('data-name');
-    product.price = dataProduct.getAttribute('data-price');
-    product.ingredients = dataProduct.getAttribute('data-ingredients');
-    product.img = dataProduct.getAttribute('data-img');
-    return product;
-}
-
-//Cart service
-
-function CartService() {
-    this.storageName = 'ck-cart';
-}
-CartService.prototype.readAll = function() {
-    var data = localStorage.getItem(this.storageName);
-    if(data) {
-        return JSON.parse(data);
+    renderTotals() {
+        const total = this.products.reduce((prev, curr) => {
+            return prev + curr.price * curr.quantity;
+        }, 0);
+        this.total.innerHTML = `${total} грн`;
     }
-    return {};
-}
-CartService.prototype.add = function(product) {
-    var data = this.readAll();
-    var id = product.id.toString();
-    if(data[id]) {
-        ++data[id].quantity;
-    }else{
-        data[id] = product;
-        data[id].quantity = 1;
+
+    add(product) {
+        this.products = [...this.products, product];
+        this.render();
     }
-    localStorage.setItem(this.storageName, JSON.stringify(data));
-}
 
-CartService.prototype.increase = function(productId) {
-    var data = this.readAll();
-    productId = productId.toString();
-    if(data[productId]) {
-        ++data[productId].quantity;
-        localStorage.setItem(this.storageName, JSON.stringify(data));
+    remove(productId) {
+        this.products = this.products.filter(p => p.id !== productId);
+        this.render();
     }
-}
 
-CartService.prototype.decrease = function(productId) {
-    var data = this.readAll();
-    productId = productId.toString();
-    if(data[productId] && data[productId].quantity > 1) {
-        --data[productId].quantity;
-        localStorage.setItem(this.storageName, JSON.stringify(data));
-    }
-}
-CartService.prototype.remove = function(productId) {
-    var data = this.readAll();
-    productId = productId.toString();
-    if(data[productId]) {
-        delete data[productId];
-        localStorage.setItem(this.storageName, JSON.stringify(data));
-    }
-}
-
-CartService.prototype.clear = function() {
-    localStorage.removeItem(this.storageName);
-}
-
-
-function Cart(productsSelector, totalsSelector) {
-    this.cart = document.querySelector(productsSelector);
-    this.total = document.querySelector(totalsSelector);
-    this.storage = new CartService();
-    this.products = Object.values(this.storage.readAll());
-    this.listenEvents();
-    this.render();
-}
-
-Cart.prototype.listenEvents = function() {
-    if(this.cart) {
-        function incDecListener(e) {
-            var t = e.target;
-            if(t.classList.contains('product__button-decrease')) {
-                var parent = t.parentNode.parentNode.parentNode;
-                var productId = parent.getAttribute('data-id');
-                this.storage.decrease(productId);
-                this.products = Object.values(this.storage.readAll());
-                var input = parent.querySelector('input');
-                var value = parseInt(input.value);
-                if(value > 1) {
-                    input.value = --value;
-                }
-                this.render();
+    increase(productId) {
+        this.products = this.products.map(p => {
+            if (p.id === productId) {
+                return { ...p, quantity: p.quantity + 1 };
             }
+            return p;
+        });
+    }
 
-            if(t.classList.contains('product__button-increase')) {
-                var parent = t.parentNode.parentNode.parentNode;
-                var productId = parent.getAttribute('data-id');
-                this.storage.increase(productId);
-                this.products = Object.values(this.storage.readAll());
-                var input = parent.querySelector('input');
-                input.value = ++input.value;
-                this.render();
-
+    decrease(productId) {
+        this.products = this.products.map(p => {
+            if (p.id === productId && p.quantity > 1) {
+                return { ...p, quantity: p.quantity - 1 };
             }
+            return p;
+        });
+    }
 
-            if(t.classList.contains('product__button-remove')) {
-                var parent = t.parentNode.parentNode;
-                var productId = parent.getAttribute('data-id');
-                cart.remove(productId);
-            }
-        }
-        this.cart.addEventListener('click', incDecListener.bind(this));
+    show() {
+        this.popup.classList.add('visible');
+    }
+
+    clear() {
+        this.products = [];
+        this.render();
+    }
+
+    render() {
+        this.cart.innerHTML = "";
+        renderProducts(this.products, this.cart);
+        this.renderTotals();
     }
 }
 
-Cart.prototype.calculateTotals = function() {
-    var total = this.products.reduce(function(prev, curr){
-        return prev + curr.price * curr.quantity;
-    }, 0);
-    this.total.innerHTML = total + ' грн';
-}
+var cart = new Cart("#cart");
 
-Cart.prototype.add = function(product) {
-    this.storage.add(product);
-    this.products = Object.values(this.storage.readAll());
-    this.render();
-}
 
-Cart.prototype.remove = function(productId) {
-    this.storage.remove(productId);
-    this.products = Object.values(this.storage.readAll());
-    this.render();
-}
 
-Cart.prototype.render = function() {
-    this.cart.innerHTML = '';
-    renderProducts(this.products, this.cart);
-    this.calculateTotals();   
-}
 
-Cart.prototype.show = function() {
-    toVisible();
-}
 
-Cart.prototype.clear = function() {
-    this.products = [];
-    this.render();
-}
-
-var cart = new Cart('.product-list', '.product-list__result .total span');
-
-var g = document.querySelector('#cakesGallery');
-if(g) {
-    g.addEventListener('click', function(e) {
+var g = document.querySelector("#cakesGallery");
+if (g) {
+    g.addEventListener("click", function(e) {
         var t = e.target;
-        if(t.classList.contains('btnBuy')) {
+        if (t.classList.contains("btnBuy")) {
             var product = parseProduct(t);
             cart.add(product);
             cart.show();
         }
-    }); 
+    });
 }
-
-
 
 let openPopup = document.querySelector("#openPopup");
 let popupWindow = document.querySelector("#cart");
@@ -263,27 +153,25 @@ function toVisible() {
     popupWindow.classList.add("visible");
 }
 
-orderBtn.addEventListener("click", function () {
+orderBtn.addEventListener("click", function() {
     popupWindow.classList.remove("visible");
     popupOrder.classList.add("visible");
 });
 
-document.body.addEventListener('click', function(e) {
-    if(e.target.classList.contains('popup-close')) {
+document.body.addEventListener("click", function(e) {
+    if (e.target.classList.contains("popup-close")) {
         var popup = e.target.parentNode.parentNode;
-        popup.classList.remove('visible');
+        popup.classList.remove("visible");
     }
 });
 
 closeCart.addEventListener("click", function() {
     popupWindow.classList.remove("visible");
-})
-
-
+});
 
 function handleForm() {
     const _form = document.querySelector(".orderForm");
-    if(!_form) {
+    if (!_form) {
         return false;
     }
     const realForm = _form.querySelector("form");
@@ -291,25 +179,25 @@ function handleForm() {
     const phone = document.getElementById("phone");
     const email = document.getElementById("email2");
 
-    const validateName = (el) => {
+    const validateName = el => {
         if (el.validity.valueMissing) {
             el.setCustomValidity("Будь ласка, введіть ім'я");
         } else {
             el.setCustomValidity("");
         }
     };
-    const validatePhone = (el) => {
-        var valid = Inputmask.isValid(el.value, '+380 (99) 999-99-99');
-        if(!valid) {
-            el.setCustomValidity('Будь ласка, введіть номер телефону');
-        }else{
-            el.setCustomValidity('');
+    const validatePhone = el => {
+        var valid = Inputmask.isValid(el.value, "+380 (99) 999-99-99");
+        if (!valid) {
+            el.setCustomValidity("Будь ласка, введіть номер телефону");
+        } else {
+            el.setCustomValidity("");
         }
     };
-    const maskPhone = (el) => {
-        $(el).inputmask('+380 (99) 999-99-99');
-    }
-    const validateEmail = (el) => {
+    const maskPhone = el => {
+        $(el).inputmask("+380 (99) 999-99-99");
+    };
+    const validateEmail = el => {
         if (el.validity.valueMissing) {
             el.setCustomValidity("Будь ласка, введіть email");
         } else if (el.validity.typeMismatch) {
@@ -318,33 +206,33 @@ function handleForm() {
             el.setCustomValidity("");
         }
     };
-    
+
     validateName(name);
     validatePhone(phone);
     validateEmail(email);
     maskPhone(phone);
 
-    name.addEventListener("input", function (event) {
+    name.addEventListener("input", function(event) {
         validateName(event.target);
     });
 
-    $(phone).on('input', function(e) {
+    $(phone).on("input", function(e) {
         var el = e.target;
         validatePhone(el);
     });
-    
-    email.addEventListener("input", function (event) {
+
+    email.addEventListener("input", function(event) {
         validateEmail(event.target);
     });
 
-    realForm.addEventListener("submit", function (e) {
+    realForm.addEventListener("submit", function(e) {
         e.preventDefault();
         let thanks = document.querySelector("#order .thankYou");
         thanks.classList.add("visible");
         var cartService = new CartService();
         cartService.clear();
         cart.clear();
-        setTimeout(function () {
+        setTimeout(function() {
             popupOrder.classList.remove("visible");
             thanks.classList.remove("visible");
             realForm.reset();
