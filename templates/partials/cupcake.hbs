@@ -4,6 +4,13 @@
         <p class="cakeTitle">{{ title }}</p>
         <p class="ingredients"><span>Інгредієнти: </span>{{ ingredients }}</p>
         <p class="price"><span>Вартість: </span>{{ price }} грн</p>
-        <button data-pid="{{ button }}" class="btnBuy">У кошик</button>
+        <button 
+            data-pid="{{ button }}" 
+            data-name="{{ title }}" 
+            data-price="{{ price }}" 
+            data-ingredients="{{ ingredients }}"
+            data-img="{{ img }}"
+            class="btnBuy"
+        >У кошик</button>
     </div>
 </div>

@@ -27,21 +27,63 @@
     text-transform: uppercase;
     font-size: 24px;
     padding: 10px;
-    border: 2px solid $mainColor2;
+    // border: 2px solid $mainColor2;
     color: $mainColor2;
     background-color: #ffffffc7;
     text-align: center;
     letter-spacing: 1.5px;
-    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    /* display: flex;
+    margin-top: 80px;
+    justify-content: center; */
+    // cursor: pointer;
 }
 .text a:hover {
     text-decoration: underline;
 }
-.cakeConstructor {
-    height: 100vh;
+/* .productionText a {
+    // font-family: $textFont;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 14px;
+    border: 2px solid $mainColor2;
+    color: $mainColor2;
+    background-color: $mainColor1;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 5px;
+} */
+.btnText:hover {
+    background-color: #ca6074;
+    color: white;
+} 
+.btnText {
+    background-color: white;
+    color: #ca6074;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 550;
+    border: 2px solid #ca6074;
+    justify-content: center;
+    text-align: center;
 }
-.cupcakeImage img {
+.cakeConstructor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cupcakeImage {
     width: 500px;
+    height: 500px;
+    margin: 60px 50px;
+    position: relative;
 }
 @media (max-width: 1100px) {
     .text {
@@ -118,6 +160,83 @@
 .btnBuy:hover {
     border: 1px solid $mainColor2;
 }
+.btnBuy:focus {
+    outline-color: unset;
+}
+.cakeBase {
+    padding-bottom: 50px;
+}
+.base {
+    width: 300px;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+.base2 {
+    display: none;
+}
+.glaze {
+    width: 300px;
+    z-index: 2;
+    position: absolute;
+    left: 20%;
+    top: 5.5%;
+    display: none;
+}
+.cakeBase p, .cakeGlaze p {
+    color: $mainColor2;
+    font-size: large;
+}
+.constructorCard {
+    background-color: $mainColor2;
+    height: 350px;
+    width: 350px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid $mainColor2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-right: 30px;
+}
+.cakeBaseGlaze {
+    margin-right: 80px;
+}
+@media (max-width: 1360px) {
+    .cupcakeImage {
+        margin: 60px 40px 60px 0px;
+    }
+    .cakeBaseGlaze {
+        margin-right: 80px;
+    }
+    .constructorCard {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 1300px) {
+    .cupcakeImage {
+        margin: 60px 40px 60px 0px;
+    }
+    .cakeBaseGlaze {
+        margin-right: 80px;
+    }
+    .constructorCard {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 1350px) {
+    .imgBack p {
+        font-size: smaller;
+    }
+}
+
+
+
+
 
 
 

@@ -12,6 +12,10 @@
   <title>Contacts</title>
 
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./images/site.webmanifest">
 </head>
 <body>
 
@@ -19,14 +23,14 @@
 
         <header>
             <div class="container">
-                <a href="#"><img src="./images/headerLogo.png" class="headerLogo"></a>
+                <a href="/index.html"><img src="./images/headerLogo.png" class="headerLogo"></a>
                 <nav class="headerMenu">
                     <ul class="menu">
                         <li><a  href="./index.html">Головна</a></li>
                         <li><a  href="./aboutUs.html">Про нас</a></li>
                         <li><a  href="./production.html">Продукція</a></li>
                         <li><a class="activeMenu" href="./contacts.html">Контакти</a></li>
-                        <li id="openPopup"><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+                        <li id="openPopup"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                     </ul>
                 </nav>
             </div>
@@ -43,42 +47,42 @@
 
             <div class="contactsMain">
 
-               <div class="adress-tel-email">
-                   <ul>
-                       <li><a href="https://goo.gl/maps/WmGyMFLSoThKUkBj9" target="_blank">
-                               <h2>АДРЕСА</h2>
-                               <p>Київська обл., м. Боярка,</br> вул. Пастернака, 85б</p>
-                           </a></li>
-                       <li><a href="tel:380636541115">
-                               <h2>ТЕЛЕФОН</h2>
-                               <p>+38 (063) 654 11 15</p>
-                           </a></li>
-                       <li><a href="tel:380446541115">
-                               <h2>ФАКС</h2>
-                               <p>+38 (044) 654 11 15</p>
-                           </a></li>
-                       <li><a href="mailto:lovecake@gmail.com" target="_blank">
-                               <h2>EMAIL</h2>
-                               <p>lovecake@gmail.com</p>
-                           </a></li>
-               </div>
-               <div class="contactsForm">
-                   <form class="transparent js-form-validate">
-                       <div class="formInner">
-                           <h3>ЧЕКАЄМО НА ВАШІ ЗАПИТАННЯ</h3>
-                           <label for="username">Ваше ім'я</label>
-                           <input type="text" id="username" required>
-                           <label for="email">Email</label>
-                           <input id="email" type="email" required>
-                           <label for="message">Текст повідомлення</label>
-                           <textarea name="message" id="message" maxlength="1024" required></textarea>
-                           <input type="submit" id="submitButton" value="Надіслати">
-                       </div>
-                   </form>
-                   <div class="thankYou">
-                       <div class="thankYouInner">Дякуємо за Ваше повідомлення! Очікуйте на відповідь найближчим часом!</div>
-                   </div>
-               </div>
+                <div class="adress-tel-email">
+                    <ul>
+                        <li><a href="https://goo.gl/maps/WmGyMFLSoThKUkBj9" target="_blank">
+                                <h2>Адреса</h2>
+                                <p>Київська обл., м. Боярка,</br> вул. Пастернака, 85б</p>
+                            </a></li>
+                        <li><a href="tel:380636541115">
+                                <h2>Телефон</h2>
+                                <p>+38 (063) 654 11 15</p>
+                            </a></li>
+                        <li><a href="mailto:lovecake@gmail.com" target="_blank">
+                                <h2>Email</h2>
+                                <p>lovecake@gmail.com</p>
+                            </a></li>
+                        <li><a href="https://www.instagram.com/krynytska_anastasia/" target="_blank">
+                                <h2>Інстаграм</h2>
+                                <p>krynytska_anastasia</p>
+                            </a></li>
+                </div>
+                <div class="contactsForm">
+                    <form class="transparent js-form-validate">
+                        <div class="formInner">
+                            <h3>ЧЕКАЄМО НА ВАШІ ЗАПИТАННЯ</h3>
+                            <label for="username">Ваше ім'я</label>
+                            <input type="text" id="username" required>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" required>
+                            <label for="message">Текст повідомлення</label>
+                            <textarea name="message" id="message" maxlength="1024" required></textarea>
+                            <input type="submit" id="submitButton" value="Надіслати">
+                        </div>
+                    </form>
+                    <div class="thankYou">
+                        <div class="thankYouInner">Дякуємо за Ваше повідомлення! Очікуйте на відповідь найближчим часом!</div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -91,7 +95,7 @@
                     <div class="year">2019</div>
                 </div>
             </div>
-        </footer>        <div class="popup cart">
+        </footer>        <div class="popup cart" id="cart">
             <div class="popup__window">
                 <div class="popup-close close-icon">&times;</div>
                 <div class="popup-content">
@@ -118,16 +122,43 @@
                     </div>
                 </div>
             </div>
+        </div>        <div class="popup cart order" id="order">
+            <div class="popup__window popup__window_sm">
+                <div class="popup-close close-icon">&times;</div>
+                <div class="popup-content">
+                    <div class="page-header page-header_sm">Будь ласка, залиште контактні дані для обговорення замовлення</div>
+                    <div class="orderForm">
+                        <form>
+                            <div class="form-group">
+                                <label for="username2">Ваше ім'я</label>
+                                <input type="text" id="username2" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Номер телефону</label>
+                                <input type="phone" placeholder="+380 (XX) XXX-XX-XX" class="form-control" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email2">Email</label>
+                                <input id="email2" type="email" class="form-control" required>
+                            </div>
+                            <input type="submit" id="submitButton2" class="button" value="Надіслати">
+                        </form>
+                        <div class="thankYou">
+                            <div class="thankYouInner">Дякуємо за Ваше замовлення! Очікуйте на дзвінок від менеджера для уточнення даних!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="./script/cart.js"></script>
-    <script src="./script/contactForm.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script></body>
+    <script src="/script/jquery.input.mask.min.js"></script>
+    <script src="./script/cart.js"></script>
+    <script src="./script/contactForm.js"></script>
+</body>
 
 </html>

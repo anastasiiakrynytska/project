@@ -44,6 +44,9 @@ header {
 .menu a {
     color: $mainColor1;
 }
+.menu a:hover {
+    color: $mainColor2;
+}
 a.activeMenu {
     color: $mainColor2;
 }
@@ -63,4 +66,7 @@ a.activeMenu {
     .logo {
         font-size: 60px;
     }
+}
+a:not([href]):not([tabindex]):hover {
+    color: $mainColor2;
 }

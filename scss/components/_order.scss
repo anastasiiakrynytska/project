@@ -2,7 +2,6 @@
     transition: all .3s;
 }
 .popup.ng-scope, .popup.cart {
-    // display: block;
     opacity: 1;
     visibility: visible;
 }
@@ -50,6 +49,9 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
     transition: all .3s;
+    &_sm {
+        max-width: 400px;
+    }
 }
 .popup-close {
     position: absolute;
@@ -70,6 +72,10 @@
     text-align: center;
     margin: 20px 0 48px;
     position: relative;
+    &_sm{
+        font-size: 18px;
+        color: $mainColor2;
+    }
 }
 .product-list-wrap {
     margin: 0 0 14px;
@@ -207,6 +213,7 @@
     text-transform: uppercase;
     display: inline-block;
     cursor: pointer;
+    border-radius: 3px; 
 }
 .link {
     cursor: pointer;
@@ -265,5 +272,22 @@
     font-weight: 500;
     margin-top: 10px;
 }
+.order input {
+    display: block;
+    width: 100%;
+}
+.form-group input.form-control {
+    &:focus {
+        outline-width: 5px;
+        box-shadow: none;
+        outline-offset: -2px;
+        outline-color: $mainColor2;
+        outline-style: auto;
+    }
+}
+.popup.order .button {
+    margin-top: 15px;
+}
+
 
 

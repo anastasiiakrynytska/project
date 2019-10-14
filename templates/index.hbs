@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ua">
 {{> head title='LoveCake'}}
+
 <body>
 
   <div class="wrapper">
@@ -14,41 +15,62 @@
     }}
 
     <div class="mainContent">
-     <div class="container-fluid cards-wrap">
+      <div class="container-fluid cards-wrap">
         <!-- <div> -->
-          <h1>Наші солодкі пропозиції</h1>
-          <!-- </div> -->
-          <div class="card-deck">
-            {{> 
+        <h1>Наші солодкі пропозиції</h1>
+        <!-- </div> -->
+        <div class="card-deck">
+          {{> 
                 card
                 img="./images/cake1.png"
                 alt="cake1"
                 title="Завжди дуже смачно"
                 description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
             }}
-            {{> 
+          {{> 
                 card
                 img="./images/cake2.png"
                 alt="cake2"
                 title="Цікаве та стильне оформлення"
                 description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
             }}
-            {{> 
+          {{> 
                 card
-                img="./images/cake3.png"
+                img="/images/cake3.png"
                 alt="cake3"
                 title="Лише натуральні інгредієнти"
                 description="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
             }}
-          </div>
-     </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="productionText">
+      <a class="btnText" href="/production.html#cakesGallery">Обрати</a>
+      <div class="text">Обирайте серед наявних капкейків або створюйте їх на свій смак</div>
+      <a class="btnText" href="/production.html#cakeConstructor">Створити</a>
+    </div>
+
+
+    <div class="contactsContent">
+
+      <h1>Наші капкейки вже чекають на вас</h1>
+
+      <div class="contactsMain">
+
+        {{> contactForm}}
+
+      </div>
+
     </div>
 
     {{> footer}}
 
     {{> cart}}
+    {{> confirmation}}
 
-</div>
+
+  </div>
 
   {{> scripts}}
 

@@ -87,65 +87,15 @@ function renderProducts(products, cart) {
     cart.appendChild(fragment);
 }
 
-var products = {
-    '1': {
-        id: 1,
-        name: 'М\'ятний капкейк',
-        img: './images/1.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, м\'ята, сметана, молоко, білий шоколад, харчовий барвник',
-        price: 50
-    },
-    '2': {
-        id: 2,
-        name: 'Святковий капкейк',
-        img: './images/2.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад',
-        price: 50
-    },
-    '3': {
-        id: 3,
-        name: 'Вершковий капкейк',
-        img: './images/3.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи',
-        price: 50
-    },
-    '4': {
-        id: 4,
-        name: 'Полунично-шоколадний капкейк',
-        img: './images/4.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, полуниця, сметана, молоко, білий шоколад, темний шоколад',
-        price: 50
-    },
-    '5': {
-        id: 5,
-        name: 'Шоколадний капкейк',
-        img: './images/5.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад',
-        price: 50
-    },
-    '6': {
-        id: 6,
-        name: 'Малиновий капкейк',
-        img: './images/6.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник',
-        price: 50
-    },
-    '7': {
-        id: 7,
-        name: 'Горіховий капкейк',
-        img: './images/7.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад',
-        price: 50
-    },
-    '8': {
-        id: 8,
-        name: 'Ожиновий капкейк',
-        img: './images/8.jpg',
-        ingredients: 'борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник',
-        price: 50
-    }
-};
-
+function parseProduct(dataProduct) {
+    var product = {};
+    product.id = dataProduct.getAttribute('data-pid');
+    product.name = dataProduct.getAttribute('data-name');
+    product.price = dataProduct.getAttribute('data-price');
+    product.ingredients = dataProduct.getAttribute('data-ingredients');
+    product.img = dataProduct.getAttribute('data-img');
+    return product;
+}
 
 //Cart service
 
@@ -195,6 +145,10 @@ CartService.prototype.remove = function(productId) {
         delete data[productId];
         localStorage.setItem(this.storageName, JSON.stringify(data));
     }
+}
+
+CartService.prototype.clear = function() {
+    localStorage.removeItem(this.storageName);
 }
 
 
@@ -274,6 +228,11 @@ Cart.prototype.show = function() {
     toVisible();
 }
 
+Cart.prototype.clear = function() {
+    this.products = [];
+    this.render();
+}
+
 var cart = new Cart('.product-list', '.product-list__result .total span');
 
 var g = document.querySelector('#cakesGallery');
@@ -281,7 +240,7 @@ if(g) {
     g.addEventListener('click', function(e) {
         var t = e.target;
         if(t.classList.contains('btnBuy')) {
-            var product = products[t.getAttribute('data-pid')];
+            var product = parseProduct(t);
             cart.add(product);
             cart.show();
         }
@@ -289,9 +248,14 @@ if(g) {
 }
 
 
+
 let openPopup = document.querySelector("#openPopup");
-let popupWindow = document.querySelector(".popup");
-let closePopup = document.querySelector(".popup-close");
+let popupWindow = document.querySelector("#cart");
+let orderBtn = document.querySelector(".button");
+let popupOrder = document.querySelector("#order");
+let closeCart = document.querySelector(".link");
+let closePopupOrder = document.querySelector("#submitButton2");
+let thanks = document.querySelector(".thankYou");
 
 openPopup.addEventListener("click", toVisible);
 
@@ -299,6 +263,94 @@ function toVisible() {
     popupWindow.classList.add("visible");
 }
 
-closePopup.addEventListener("click", function () {
+orderBtn.addEventListener("click", function () {
+    popupWindow.classList.remove("visible");
+    popupOrder.classList.add("visible");
+});
+
+document.body.addEventListener('click', function(e) {
+    if(e.target.classList.contains('popup-close')) {
+        var popup = e.target.parentNode.parentNode;
+        popup.classList.remove('visible');
+    }
+});
+
+closeCart.addEventListener("click", function() {
     popupWindow.classList.remove("visible");
 })
+
+
+
+function handleForm() {
+    const _form = document.querySelector(".orderForm");
+    if(!_form) {
+        return false;
+    }
+    const realForm = _form.querySelector("form");
+    const name = document.getElementById("username2");
+    const phone = document.getElementById("phone");
+    const email = document.getElementById("email2");
+
+    const validateName = (el) => {
+        if (el.validity.valueMissing) {
+            el.setCustomValidity("Будь ласка, введіть ім'я");
+        } else {
+            el.setCustomValidity("");
+        }
+    };
+    const validatePhone = (el) => {
+        var valid = Inputmask.isValid(el.value, '+380 (99) 999-99-99');
+        if(!valid) {
+            el.setCustomValidity('Будь ласка, введіть номер телефону');
+        }else{
+            el.setCustomValidity('');
+        }
+    };
+    const maskPhone = (el) => {
+        $(el).inputmask('+380 (99) 999-99-99');
+    }
+    const validateEmail = (el) => {
+        if (el.validity.valueMissing) {
+            el.setCustomValidity("Будь ласка, введіть email");
+        } else if (el.validity.typeMismatch) {
+            el.setCustomValidity("Будь ласка, введіть коректний email");
+        } else {
+            el.setCustomValidity("");
+        }
+    };
+    
+    validateName(name);
+    validatePhone(phone);
+    validateEmail(email);
+    maskPhone(phone);
+
+    name.addEventListener("input", function (event) {
+        validateName(event.target);
+    });
+
+    $(phone).on('input', function(e) {
+        var el = e.target;
+        validatePhone(el);
+    });
+    
+    email.addEventListener("input", function (event) {
+        validateEmail(event.target);
+    });
+
+    realForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let thanks = document.querySelector("#order .thankYou");
+        thanks.classList.add("visible");
+        var cartService = new CartService();
+        cartService.clear();
+        cart.clear();
+        setTimeout(function () {
+            popupOrder.classList.remove("visible");
+            thanks.classList.remove("visible");
+            realForm.reset();
+        }, 3000);
+        return false;
+    });
+}
+
+handleForm();
