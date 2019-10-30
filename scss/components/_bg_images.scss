@@ -61,7 +61,7 @@ $gradColor: rgba(0, 0, 0, 0.15);
             background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/mainImage.jpg);
         }
         &.about {
-            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/aboutUs.jpg);
+            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/aboutUs.png);
         }
         &.contact {
             background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/contacts.jpg);
