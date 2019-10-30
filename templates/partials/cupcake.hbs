@@ -1,5 +1,11 @@
 <div class="col-lg-3 col-md-4 col-12 thumb">
-    <div class="imgFront"><img class="img-fluid" src="{{ img }}" alt="{{ alt }}" title="{{ title }}"></div>
+    <div class="imgFront">
+        {{#if imgRetina }}
+    <img src="{{ img }}" srcset="{{ imgRetina }} 2x" class="img-fluid" alt="{{ alt }}" title="{{ title }}">
+    {{else}}
+    <img src="{{ img }}" class="img-fluid" alt="{{ alt }}" title="{{ title }}">
+    {{/if}}
+    </div>
     <div class="imgBack">
         <p class="cakeTitle">{{ title }}</p>
         <p class="ingredients"><span>Інгредієнти: </span>{{ ingredients }}</p>

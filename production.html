@@ -15,16 +15,15 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-  <link rel="manifest" href="./images/site.webmanifest">
 </head>
 <body>
     <script>
-        var products = {"1":{"id":1,"name":"М'ятний капкейк","img":"./images/1.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"М'ятний капкейк"},"2":{"id":2,"name":"Святковий капкейк","img":"./images/2.jpg","ingredients":"борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад","price":50,"alt":"Святковий капкейк"},"3":{"id":3,"name":"Вершковий капкейк","img":"./images/3.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи","price":50,"alt":"Вершковий капкейк"},"4":{"id":4,"name":"Полунично-шоколадний капкейк","img":"./images/4.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, полуниця, сметана, молоко, какао","price":50,"alt":"Полунично-шоколадний капкейк"},"5":{"id":5,"name":"Шоколадний капкейк","img":"./images/5.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад","price":50,"alt":"Шоколадний капкейк"},"6":{"id":6,"name":"Малиновий капкейк","img":"./images/6.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"Малиновий капкейк"},"7":{"id":7,"name":"Горіховий капкейк","img":"./images/7.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад","price":50,"alt":"Горіховий капкейк"},"8":{"id":8,"name":"Ожиновий капкейк","img":"./images/8.jpg","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"Ожиновий капкейк"}}
+        var products = {"1":{"id":1,"name":"М'ятний капкейк","img":"./images/1.png","imgRetina":"./images/1@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"М'ятний капкейк"},"2":{"id":2,"name":"Святковий капкейк","img":"./images/2.png","imgRetina":"./images/2@2.png","ingredients":"борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад","price":50,"alt":"Святковий капкейк"},"3":{"id":3,"name":"Вершковий капкейк","img":"./images/3.png","imgRetina":"./images/3@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи","price":50,"alt":"Вершковий капкейк"},"4":{"id":4,"name":"Полунично-шоколадний капкейк","img":"./images/4.png","imgRetina":"./images/4@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, полуниця, сметана, молоко, какао","price":50,"alt":"Полунично-шоколадний капкейк"},"5":{"id":5,"name":"Шоколадний капкейк","img":"./images/5.png","imgRetina":"./images/5@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад","price":50,"alt":"Шоколадний капкейк"},"6":{"id":6,"name":"Малиновий капкейк","img":"./images/6.png","imgRetina":"./images/6@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"Малиновий капкейк"},"7":{"id":7,"name":"Горіховий капкейк","img":"./images/7.png","imgRetina":"./images/7@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад","price":50,"alt":"Горіховий капкейк"},"8":{"id":8,"name":"Ожиновий капкейк","img":"./images/8.png","imgRetina":"./images/8@2.png","ingredients":"борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник","price":50,"alt":"Ожиновий капкейк"}}
     </script>    <div class="wrapper">
 
         <header>
             <div class="container header">
-                <a href="/index.html"><img src="./images/headerLogo.png" alt="LoveCake" class="headerLogo" title="LoveCake"></a>
+                <a href="/index.html"><img src="./images/headerLogo.png" srcset="./images/headerLogo@2.png 2x" alt="LoveCake" class="headerLogo" title="LoveCake"></a>
                 <nav class="headerMenu">
                     <ul class="menu">
                         <li><a 
@@ -54,7 +53,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/1.jpg" alt="М&#x27;ятний капкейк" title="М&#x27;ятний капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/1.png" srcset="./images/1@2.png 2x" class="img-fluid" alt="М&#x27;ятний капкейк" title="М&#x27;ятний капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">М&#x27;ятний капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, м&#x27;ята, сметана, молоко, білий шоколад, харчовий барвник</p>
@@ -64,13 +65,15 @@
                                 data-name="М&#x27;ятний капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, м&#x27;ята, сметана, молоко, білий шоколад, харчовий барвник"
-                                data-img="./images/1.jpg"
+                                data-img="./images/1.png"
                                 data-alt="М&#x27;ятний капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/2.jpg" alt="Святковий капкейк" title="Святковий капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/2.png" srcset="./images/2@2.png 2x" class="img-fluid" alt="Святковий капкейк" title="Святковий капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Святковий капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад</p>
@@ -80,13 +83,15 @@
                                 data-name="Святковий капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад"
-                                data-img="./images/2.jpg"
+                                data-img="./images/2.png"
                                 data-alt="Святковий капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/3.jpg" alt="Вершковий капкейк" title="Вершковий капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/3.png" srcset="./images/3@2.png 2x" class="img-fluid" alt="Вершковий капкейк" title="Вершковий капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Вершковий капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи</p>
@@ -96,13 +101,15 @@
                                 data-name="Вершковий капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи"
-                                data-img="./images/3.jpg"
+                                data-img="./images/3.png"
                                 data-alt="Вершковий капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/4.jpg" alt="Полунично-шоколадний капкейк" title="Полунично-шоколадний капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/4.png" srcset="./images/4@2.png 2x" class="img-fluid" alt="Полунично-шоколадний капкейк" title="Полунично-шоколадний капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Полунично-шоколадний капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, полуниця, сметана, молоко, какао</p>
@@ -112,13 +119,15 @@
                                 data-name="Полунично-шоколадний капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, полуниця, сметана, молоко, какао"
-                                data-img="./images/4.jpg"
+                                data-img="./images/4.png"
                                 data-alt="Полунично-шоколадний капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/5.jpg" alt="Шоколадний капкейк" title="Шоколадний капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/5.png" srcset="./images/5@2.png 2x" class="img-fluid" alt="Шоколадний капкейк" title="Шоколадний капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Шоколадний капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад</p>
@@ -128,13 +137,15 @@
                                 data-name="Шоколадний капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад"
-                                data-img="./images/5.jpg"
+                                data-img="./images/5.png"
                                 data-alt="Шоколадний капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/6.jpg" alt="Малиновий капкейк" title="Малиновий капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/6.png" srcset="./images/6@2.png 2x" class="img-fluid" alt="Малиновий капкейк" title="Малиновий капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Малиновий капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник</p>
@@ -144,13 +155,15 @@
                                 data-name="Малиновий капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник"
-                                data-img="./images/6.jpg"
+                                data-img="./images/6.png"
                                 data-alt="Малиновий капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/7.jpg" alt="Горіховий капкейк" title="Горіховий капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/7.png" srcset="./images/7@2.png 2x" class="img-fluid" alt="Горіховий капкейк" title="Горіховий капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Горіховий капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад</p>
@@ -160,13 +173,15 @@
                                 data-name="Горіховий капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад"
-                                data-img="./images/7.jpg"
+                                data-img="./images/7.png"
                                 data-alt="Горіховий капкейк"
                                 class="btnBuy"
                             >У кошик</button>
                         </div>
                     </div>                    <div class="col-lg-3 col-md-4 col-12 thumb">
-                        <div class="imgFront"><img class="img-fluid" src="./images/8.jpg" alt="Ожиновий капкейк" title="Ожиновий капкейк"></div>
+                        <div class="imgFront">
+                        <img src="./images/8.png" srcset="./images/8@2.png 2x" class="img-fluid" alt="Ожиновий капкейк" title="Ожиновий капкейк">
+                        </div>
                         <div class="imgBack">
                             <p class="cakeTitle">Ожиновий капкейк</p>
                             <p class="ingredients"><span>Інгредієнти: </span>борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник</p>
@@ -176,7 +191,7 @@
                                 data-name="Ожиновий капкейк" 
                                 data-price="50" 
                                 data-ingredients="борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник"
-                                data-img="./images/8.jpg"
+                                data-img="./images/8.png"
                                 data-alt="Ожиновий капкейк"
                                 class="btnBuy"
                             >У кошик</button>

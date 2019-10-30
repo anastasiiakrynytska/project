@@ -1,5 +1,9 @@
 <div class="card">
+    {{#if imgRetina }}
+    <img src="{{ img }}" srcset="{{ imgRetina }} 2x" class="card-img-top" alt="{{ alt }}" title="{{ title }}">
+    {{else}}
     <img src="{{ img }}" class="card-img-top" alt="{{ alt }}" title="{{ title }}">
+    {{/if}}
     <div class="card-body">
         <h2 class="card-title">{{ card-title }}</h2>
         <p class="card-text">{{ description }}</p>

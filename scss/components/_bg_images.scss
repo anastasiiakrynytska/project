@@ -10,7 +10,7 @@ $gradColor: rgba(0, 0, 0, 0.15);
         background-image: url(../images/mainImage.jpg);   
     }
     &.about {
-        background-image: url(../images/aboutUs.jpg);
+        background-image: url(../images/aboutUs.png);
     }
     &.contact {
         background-image: url(../images/contacts.jpg);
@@ -21,7 +21,6 @@ $gradColor: rgba(0, 0, 0, 0.15);
 }
 
 .bgMainImage {
-    background-image: url(../images/mainImage.jpg);
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -31,7 +30,6 @@ $gradColor: rgba(0, 0, 0, 0.15);
 }
 
 .bgAboutUsImage {
-    background-image: url(../images/aboutUs.jpg);
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -41,7 +39,6 @@ $gradColor: rgba(0, 0, 0, 0.15);
 }
 
 .bgContactsImage {
-    background-image: url(../images/contacts.jpg);
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -50,7 +47,6 @@ $gradColor: rgba(0, 0, 0, 0.15);
     justify-content: center;
 }
 .bgProductionImage {
-    background-image: url(../images/production.jpg);
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -72,6 +68,17 @@ $gradColor: rgba(0, 0, 0, 0.15);
         }
         &.production {
             background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/production.jpg);
+        }
+    }
+}
+
+@media 
+(min-width: 1200px) and  (-webkit-min-device-pixel-ratio: 2), 
+(min-width: 1200px) and (min-resolution: 192dpi) { 
+    .hero {
+        
+        &.about {
+            background-image: url(../images/aboutUs@2.png);
         }
     }
 }

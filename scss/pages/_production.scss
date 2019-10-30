@@ -17,7 +17,7 @@
     justify-content: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-image: url(..//images/production2.jpg);
+    background-image: url(../images/production2.png);
     background-size: cover;
     background-position: center center;
 }
@@ -208,6 +208,13 @@
 .cakeBaseGlaze {
    max-width: 250px;
    margin: auto;
+}
+@media 
+(min-width: 1200px) and  (-webkit-min-device-pixel-ratio: 2), 
+(min-width: 1200px) and (min-resolution: 192dpi) { 
+    .productionText {
+        background-image: url(../images/production2@2.png);
+    }
 }
 @media (max-width: 1320px) {
     .btnText1 {

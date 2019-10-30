@@ -2,7 +2,8 @@ module.exports.products = {
     "1": {
         id: 1,
         name: "М'ятний капкейк",
-        img: "./images/1.jpg",
+        img: "./images/1.png",
+        imgRetina: "./images/1@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, м'ята, сметана, молоко, білий шоколад, харчовий барвник",
         price: 50,
@@ -12,7 +13,8 @@ module.exports.products = {
     "2": {
         id: 2,
         name: "Святковий капкейк",
-        img: "./images/2.jpg",
+        img: "./images/2.png",
+        imgRetina: "./images/2@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, розпушувач, яйця, ванілін, молоко, сметана, білий шоколад, молочний шоколад",
         price: 50,
@@ -21,7 +23,8 @@ module.exports.products = {
     "3": {
         id: 3,
         name: "Вершковий капкейк",
-        img: "./images/3.jpg",
+        img: "./images/3.png",
+        imgRetina: "./images/3@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, вершки, сметана, молоко, білий шоколад, горіхи",
         price: 50,
@@ -30,7 +33,8 @@ module.exports.products = {
     "4": {
         id: 4,
         name: "Полунично-шоколадний капкейк",
-        img: "./images/4.jpg",
+        img: "./images/4.png",
+        imgRetina: "./images/4@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, полуниця, сметана, молоко, какао",
         price: 50,
@@ -39,7 +43,8 @@ module.exports.products = {
     "5": {
         id: 5,
         name: "Шоколадний капкейк",
-        img: "./images/5.jpg",
+        img: "./images/5.png",
+        imgRetina: "./images/5@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, молочний шоколад, темний шоколад",
         price: 50,
@@ -48,7 +53,8 @@ module.exports.products = {
     "6": {
         id: 6,
         name: "Малиновий капкейк",
-        img: "./images/6.jpg",
+        img: "./images/6.png",
+        imgRetina: "./images/6@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, малина, сметана, молоко, білий шоколад, харчовий барвник",
         price: 50,
@@ -57,7 +63,8 @@ module.exports.products = {
     "7": {
         id: 7,
         name: "Горіховий капкейк",
-        img: "./images/7.jpg",
+        img: "./images/7.png",
+        imgRetina: "./images/7@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, волоський горіх, сметана, молоко, мигдаль, темний шоколад",
         price: 50,
@@ -66,7 +73,8 @@ module.exports.products = {
     "8": {
         id: 8,
         name: "Ожиновий капкейк",
-        img: "./images/8.jpg",
+        img: "./images/8.png",
+        imgRetina: "./images/8@2.png",
         ingredients:
             "борошно, вершкове масло, цукор, яйця, ванілін, ожина, сметана, молоко, білий шоколад, харчовий барвник",
         price: 50,
