@@ -70,3 +70,35 @@ a.activeMenu {
 a:not([href]):not([tabindex]):hover {
     color: $mainColor2;
 }
+@media (max-width: 767px) {
+    .headerLogo {
+        margin-left: 0;
+    }
+    .menu {
+        margin-right: 0;
+    }
+    .logoSloganName {
+        z-index: 2;
+    }
+    .logo {
+        font-size: 60px;
+    }
+    .slogan {
+        font-size: 25px;
+    }
+    .headerLogo {
+        height: 70px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .headerLogo {
+        margin-left: 0;
+    }
+    .menu {
+        margin-right: 0;
+    }
+    .mainContent {
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+}

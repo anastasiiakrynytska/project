@@ -1,29 +1,25 @@
 
 .mainContent {
     margin-top: 80px;
-    background-color: #ffffff;
+    background-color: $mainColor1;
     margin-bottom: 80px;
 }
-
 .cards-wrap.container-fluid {
     max-width: 1400px;
     margin: auto;
 }
-
 @media (max-width: 1023px) {
     
     .mainContent {
         margin-bottom: 50px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
    
     h1 {
         margin-bottom: 50px;
     }
 }
-@media (max-width: 960px) {
-    
-    
+@media (max-width: 960px) { 
     .mainContent {
         margin-bottom: 0;
     }

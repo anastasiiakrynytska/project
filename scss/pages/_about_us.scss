@@ -16,44 +16,17 @@
 .aboutUsText p {
     margin-left: 50px;
     margin-right: 650px;
-    color: white;
+    color: $mainColor1;
     position: relative;
     font-size: 17px;
     padding: 30px;
-    font-family: "Open Sans", sans-serif;
+    font-family: $textFont;
     z-index: 2;
-    // text-shadow: 1px 1px 0px rgba(0,0,0,0.2);  
 }
 .aboutUsContent {
     margin-top: 80px;
-    background-color: #ffffff;
+    background-color: $mainColor1;
     margin-bottom: 80px;
-}
-@media (max-width: 1250px) {
-    .aboutUsText p {
-        margin: 50px;
-        margin-right: 500px;
-    }
-}
-@media (max-width: 960px) {
-    .aboutUsText p {
-        margin: 50px;
-        margin-right: 380px;
-    }
-    .aboutUsText {
-        height: auto;
-    }
-}
-@media (max-width: 720px) {
-    .aboutUsText p {
-        margin: 50px;
-        margin-right: 300px;
-    }  
-}
-@media (max-width: 630px) {
-    .aboutUsText p {
-        margin: 50px;
-    }
 }
 .aboutUsText2 {
     position: absolute;
@@ -64,5 +37,53 @@
     left: 0;
     z-index: 1;
 }
+@media (max-width: 1250px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 400px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .aboutUsContent {
+        margin-bottom: 40px;
+    }
+    .aboutUsText p {
+        margin-right: 250px;
+    }
+}
+@media (max-width: 960px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 300px;
+    }
+}
+@media (max-width: 767px) {
+    .aboutUsContent {
+        margin-top: 30px; 
+        margin-bottom: 0;
+    }
+    .aboutUsContent h1 {
+        margin-bottom: 30px
+    }
+}
+@media (max-width: 720px) {
+    .aboutUsText p {
+        margin: 50px;
+        margin-right: 300px;
+    }  
+}
+@media (max-width: 630px) {
+    .aboutUsText p {
+        margin: 10px;
+        margin-right: 150px;
+    }
+}
+@media (max-width: 450px) {
+    .aboutUsText p {
+        margin: 10px;
+    }
+}
+
+
 
 

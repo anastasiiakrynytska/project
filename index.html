@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  <meta name="description" content="Інтернет-магазин капкейків LoveCake. Домашні капкейки на будь-який смак і оформлення. Можливість обрати власний дизайн за допомогою конструктора.">
+  <meta name="keywords" content="інтернет-магазин капкейків, капкейк, домашній капкейк, купити капкейк, конструктор капкейків, капкейк онлайн">
+  <title>LoveCake: інтернет-магазин капкейків</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <title>LoveCake</title>
-
   <link rel="stylesheet" href="./css/main.css">
   <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -21,15 +20,17 @@
 
   <div class="wrapper">
     <header>
-        <div class="container">
-            <a href="/index.html"><img src="./images/headerLogo.png" class="headerLogo"></a>
+        <div class="container header">
+            <a href="/index.html"><img src="./images/headerLogo.png" alt="LoveCake" class="headerLogo" title="LoveCake"></a>
             <nav class="headerMenu">
                 <ul class="menu">
-                    <li><a class="activeMenu" href="./index.html">Головна</a></li>
-                    <li><a  href="./aboutUs.html">Про нас</a></li>
-                    <li><a  href="./production.html">Продукція</a></li>
-                    <li><a  href="./contacts.html">Контакти</a></li>
-                    <li id="openPopup"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                    <li><a class="activeMenu" 
+                            href="./index.html" title="Головна">Головна</a></li>
+                    <li><a  href="./aboutUs.html" title="Про нас">Про нас</a></li>
+                    <li><a  href="./production.html" title="Продукція">Продукція</a></li>
+                    <li><a 
+                            href="./contacts.html" title="Контакти">Контакти</a></li>
+                    <li id="openPopup"><a title="Кошик"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -47,31 +48,31 @@
         <!-- </div> -->
         <div class="card-deck">
           <div class="card">
-              <img src="./images/cake1.png" class="card-img-top" alt="cake1">
+              <img src="./images/cake1.png" class="card-img-top" alt="Завжди дуже смачно" title="Завжди дуже смачно">
               <div class="card-body">
                   <h2 class="card-title">Завжди дуже смачно</h2>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer</p>
+                  <p class="card-text">Поєднання смаків у наших капкейках дійсно створене для вашої насолоди — ми дегустуємо та обираємо найсмачніше для клієнтів</p>
               </div>
           </div>          <div class="card">
-              <img src="./images/cake2.png" class="card-img-top" alt="cake2">
+              <img src="./images/cake2.png" class="card-img-top" alt="Цікаве та стильне оформлення" title="Цікаве та стильне оформлення">
               <div class="card-body">
                   <h2 class="card-title">Цікаве та стильне оформлення</h2>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer</p>
+                  <p class="card-text">У нас ви можете обрати капкейки не лише на будь-який смак, а і на вигляд, адже ми можемо втілити будь-які побажання та пропозиції</p>
               </div>
           </div>          <div class="card">
-              <img src="/images/cake3.png" class="card-img-top" alt="cake3">
+              <img src="/images/cake3.png" class="card-img-top" alt="Лише натуральні інгредієнти" title="Лише натуральні інгредієнти">
               <div class="card-body">
                   <h2 class="card-title">Лише натуральні інгредієнти</h2>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer</p>
+                  <p class="card-text">Ми готуємо не тільку смачну, а і насправді корисну продукцію, тому ви можете ласувати капкейками навіть з маленькими дітьми</p>
               </div>
           </div>        </div>
       </div>
     </div>
 
     <div class="productionText">
-      <a class="btnText" href="/production.html#cakesGallery">Обрати</a>
+      <a class="btnText btnText1" href="/production.html#cakesGallery" title="Обрати капкейк">Обрати</a>
       <div class="text">Обирайте серед наявних капкейків або створюйте їх на свій смак</div>
-      <a class="btnText" href="/production.html#cakeConstructor">Створити</a>
+      <a class="btnText btnText2" href="/production.html#cakeConstructor" title="Створити капкейк">Створити</a>
     </div>
 
 
@@ -83,19 +84,19 @@
 
         <div class="adress-tel-email">
             <ul>
-                <li><a href="https://goo.gl/maps/WmGyMFLSoThKUkBj9" target="_blank">
+                <li><a href="https://goo.gl/maps/WmGyMFLSoThKUkBj9" target="_blank" title="Адреса">
                         <h2>Адреса</h2>
                         <p>Київська обл., м. Боярка,</br> вул. Пастернака, 85б</p>
                     </a></li>
-                <li><a href="tel:380636541115">
+                <li><a href="tel:380636541115" title="Телефон">
                         <h2>Телефон</h2>
                         <p>+38 (063) 654 11 15</p>
                     </a></li>
-                <li><a href="mailto:lovecake@gmail.com" target="_blank">
+                <li><a href="mailto:lovecake@gmail.com" target="_blank" title="Email">
                         <h2>Email</h2>
                         <p>lovecake@gmail.com</p>
                     </a></li>
-                <li><a href="https://www.instagram.com/krynytska_anastasia/" target="_blank">
+                <li><a href="https://www.instagram.com/krynytska_anastasia/" target="_blank" title="Інстаграм">
                         <h2>Інстаграм</h2>
                         <p>krynytska_anastasia</p>
                     </a></li>
@@ -170,7 +171,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Номер телефону</label>
-                            <input type="phone" placeholder="+380 (XX) XXX-XX-XX" class="form-control" id="phone" required>
+                            <input type="phone" placeholder="+380 (__) ___-__-__" class="form-control" id="phone" required>
                         </div>
                         <div class="form-group">
                             <label for="email2">Email</label>
@@ -193,6 +194,7 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
   <script src="/script/jquery.input.mask.min.js"></script>
+  <script src="/script/common.js"></script>
   <script src="./script/cart.js"></script>
   <script src="./script/contactForm.js"></script>
 

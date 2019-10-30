@@ -1,13 +1,15 @@
 <header>
-    <div class="container">
-        <a href="/index.html"><img src="./images/headerLogo.png" class="headerLogo"></a>
+    <div class="container header">
+        <a href="/index.html"><img src="./images/headerLogo.png" alt="LoveCake" class="headerLogo" title="LoveCake"></a>
         <nav class="headerMenu">
             <ul class="menu">
-                <li><a {{#ifvalue activeItem  value='home'}}class="activeMenu"{{/ifvalue}} href="./index.html">Головна</a></li>
-                <li><a {{#ifvalue activeItem  value='about'}}class="activeMenu"{{/ifvalue}} href="./aboutUs.html">Про нас</a></li>
-                <li><a {{#ifvalue activeItem  value='production'}}class="activeMenu"{{/ifvalue}} href="./production.html">Продукція</a></li>
-                <li><a {{#ifvalue activeItem  value='contacts'}}class="activeMenu"{{/ifvalue}} href="./contacts.html">Контакти</a></li>
-                <li id="openPopup"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <li><a {{#ifvalue activeItem  value='home'}}class="activeMenu" {{/ifvalue}}
+                        href="./index.html" title="Головна">Головна</a></li>
+                <li><a {{#ifvalue activeItem  value='about'}}class="activeMenu" {{/ifvalue}} href="./aboutUs.html" title="Про нас">Про нас</a></li>
+                <li><a {{#ifvalue activeItem  value='production'}}class="activeMenu" {{/ifvalue}} href="./production.html" title="Продукція">Продукція</a></li>
+                <li><a {{#ifvalue activeItem  value='contacts'}}class="activeMenu" {{/ifvalue}}
+                        href="./contacts.html" title="Контакти">Контакти</a></li>
+                <li id="openPopup"><a title="Кошик"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
             </ul>
         </nav>
     </div>

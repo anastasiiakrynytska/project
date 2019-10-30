@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ua">
 
-{{> head title="Production"}}
+{{> head title="Продукція — LoveCake: інтернет-магазин капкейків"}}
 
 <body>
     {{> products_js}}
@@ -17,9 +17,9 @@
         }}
 
         <div class="productionText">
-            <a class="btnText" href="#cakesGallery">Обрати</a>
-            <div class="text">Обирайте серед наявних капкейків або створюйте їх на свій смак</div>
-            <a class="btnText" href="#cakeConstructor">Створити</a>
+                <a class="btnText btnText1 smooth-scroll" href="#cakesGallery" title="Обрати капкейк">Обрати</a>
+                <div class="text">Обирайте серед наявних капкейків або створюйте їх на свій смак</div>
+                <a class="btnText btnText2 smooth-scroll" href="#cakeConstructor" title="Створити капкейк">Створити</a>
         </div>
 
         <div class="cakesGallery" id="cakesGallery">
@@ -29,7 +29,7 @@
                     {{> 
                         cupcake
                         img=this.img
-                        alt="..."
+                        alt=this.alt
                         title=this.name
                         ingredients=this.ingredients
                         price=this.price
@@ -40,70 +40,99 @@
             </div>
         </div>
 
-        <div class="cakeConstructor" id="cakeConstructor">
+        <div class="container-fluid builder-container">
+            <div class="row">
+                <h1>Створюйте за допомогою конструктора</h1>
+                <div class="cakeConstructor" id="cakeConstructor">
+                    <div class="mb-60-md col-lg-8 col-12">
+                        <div class="row flex-reverse-sm align-items-end">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="cupcakeImage">
+                                    <img class="glaze" style="display: none" src="" alt="">
+                                    <img class="base" src="/images/base1.png" alt="Вершкова основа">
+                                </div>
 
-            <div class="cupcakeImage">
-                <img class="glaze glaze2" src="/images/glaze2.png" alt="">
-                <img class="glaze glaze3" src="/images/glaze3.png" alt="">
-                <img class="glaze glaze4" src="/images/glaze4.png" alt="">
-                <img class="glaze glaze5" src="/images/glaze5.png" alt="">
-                <img class="glaze glaze6" src="/images/glaze6.png" alt="">
-                <img class="base base1" src="/images/base1.png" alt="">
-                <img class="base base2" src="/images/base2.png" alt="">
-            </div>
+                            </div>
 
-            <div class="cakeBaseGlaze">
+                            <div class=" col-lg-6 col-md-6 col-12">
+                                <div class="cakeBaseGlaze">
+                                    <div class="cakeBase">
+                                        <p>Оберіть основу для капкейку</p>
+                                        <div class="form-check">
+                                            <input data-img="/images/base1.png" data-text="Вершкова основа"
+                                                type="radio" class="form-check-input" id="base1" name="base" checked>
+                                            <label class="form-check-label" for="base1">Вершкова основа</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/base2.png" data-text="Шоколадна основа"
+                                                type="radio" class="form-check-input" value="base2" id="base2"
+                                                name="base">
+                                            <label class="form-check-label" for="base2">Шоколадна основа</label>
+                                        </div>
 
-                <div class="cakeBase">
-                    <p>Оберіть основу для капкейку</p>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="base1" data-target="base1" name="base" checked>
-                        <label class="form-check-label" for="base1">Вершкова основа</label>
+                                    </div>
+
+
+                                    <div class="cakeGlaze">
+                                        <p>Оберіть глазур для капкейку</p>
+                                        <div class="form-check">
+                                            <input type="radio" data-text="Капкейк без глазурі" class="form-check-input"
+                                                id="glaze1" name="glaze" checked>
+                                            <label class="form-check-label" for="glaze1">Капкейк без глазурі</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/glaze2.png" data-text="Вершкова глазур з вишнею"
+                                                type="radio" class="form-check-input" id="glaze2" name="glaze">
+                                            <label class="form-check-label" for="glaze2">Вершкова глазур з
+                                                вишнею</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/glaze3.png" data-text="Глазур з білим шоколадом"
+                                                type="radio" class="form-check-input" id="glaze3" name="glaze">
+                                            <label class="form-check-label" for="glaze3">Глазур з білим
+                                                шоколадом</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/glaze4.png" type="radio"
+                                                data-text="Полунична глазур" class="form-check-input" id="glaze4"
+                                                name="glaze">
+                                            <label class="form-check-label" for="glaze4">Полунична глазур</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/glaze5.png"
+                                                data-text="Бананово-шоколадна глазур" type="radio"
+                                                class="form-check-input" id="glaze5" name="glaze">
+                                            <label class="form-check-label" for="glaze5">Бананово-шоколадна
+                                                глазур</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input data-img="/images/glaze6.png"
+                                                data-text="Шоколадно-кокосова глазур" type="radio"
+                                                class="form-check-input" id="glaze6" name="glaze">
+                                            <label class="form-check-label" for="glaze6">Шоколадно-кокосова
+                                                глазур</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" data-target="base2" id="base2" name="base">
-                        <label class="form-check-label" for="base2">Шоколадна основа</label>
+
+                    <div class="col-lg-4 col-12">
+                        <div class="constructorCard">
+                            <div class="cardBase">
+                                <p>Вершкова основа</p>
+                            </div>
+                            <div class="cardGlaze">
+                                <p>Капкейк без глазурі</p>
+                            </div>
+                            <p class="price price2"><span>Вартість: </span>50 грн</p>
+                            <button data-pid="" class="btnBuy" id="buy-custom-cake">У кошик</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="cakeGlaze">
-                    <p>Оберіть глазур для капкейку</p>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze1" name="glaze" checked>
-                        <label class="form-check-label" for="glaze1">Капкейк без глазурі</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze2" name="glaze">
-                        <label class="form-check-label" for="glaze2">Вершкова глазур з вишнею</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze3" name="glaze">
-                        <label class="form-check-label" for="glaze3">Глазур з білим шоколадом</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze4" name="glaze">
-                        <label class="form-check-label" for="glaze4">Полунична глазур</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze5" name="glaze">
-                        <label class="form-check-label" for="glaze5">Бананово-шоколадна глазур</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" id="glaze6" name="glaze">
-                        <label class="form-check-label" for="glaze6">Шоколадно-кокосова глазур</label>
-                    </div>
-                </div>
-
             </div>
-
-            <div class="constructorCard">
-                {{!-- <p class="cakeTitle">Вершковий капкейк без глазурі</p>
-                <p class="ingredients"><span>Інгредієнти:</span> борошно, яйця, вершки, розпушувач, вершкове масло</p> --}}
-                <p class="price"><span>Вартість: </span>50 грн</p>
-                <button data-pid="" class="btnBuy">У кошик</button>
-            </div>
-
-
         </div>
 
         {{> footer}}

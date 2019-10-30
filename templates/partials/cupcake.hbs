@@ -1,5 +1,5 @@
 <div class="col-lg-3 col-md-4 col-12 thumb">
-    <div class="imgFront"><img class="img-fluid" src="{{ img }}" alt="{{ alt }}"></div>
+    <div class="imgFront"><img class="img-fluid" src="{{ img }}" alt="{{ alt }}" title="{{ title }}"></div>
     <div class="imgBack">
         <p class="cakeTitle">{{ title }}</p>
         <p class="ingredients"><span>Інгредієнти: </span>{{ ingredients }}</p>
@@ -10,6 +10,7 @@
             data-price="{{ price }}" 
             data-ingredients="{{ ingredients }}"
             data-img="{{ img }}"
+            data-alt="{{ alt }}"
             class="btnBuy"
         >У кошик</button>
     </div>

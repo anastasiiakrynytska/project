@@ -1,3 +1,4 @@
+$gradColor: rgba(0, 0, 0, 0.15);
 .hero {
     background-size: cover;
     background-position: center center;
@@ -57,3 +58,20 @@
     align-items: center;
     justify-content: center;
 } 
+
+@media (max-width: 991px) {
+    .hero {
+        &.main {
+            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/mainImage.jpg);
+        }
+        &.about {
+            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/aboutUs.jpg);
+        }
+        &.contact {
+            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/contacts.jpg);
+        }
+        &.production {
+            background-image: linear-gradient(to bottom, $gradColor, $gradColor), url(../images/production.jpg);
+        }
+    }
+}

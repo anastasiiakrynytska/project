@@ -1,7 +1,7 @@
 .thumb img {
     filter: none;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: $mainColor1;
     border: 1px solid #ddd;
     padding: 5px;
     cursor: pointer;
@@ -27,7 +27,6 @@
     text-transform: uppercase;
     font-size: 24px;
     padding: 10px;
-    // border: 2px solid $mainColor2;
     color: $mainColor2;
     background-color: #ffffffc7;
     text-align: center;
@@ -35,34 +34,17 @@
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 5px;
-    /* display: flex;
-    margin-top: 80px;
-    justify-content: center; */
-    // cursor: pointer;
 }
 .text a:hover {
     text-decoration: underline;
 }
-/* .productionText a {
-    // font-family: $textFont;
-    z-index: 2;
-    text-transform: uppercase;
-    font-size: 18px;
-    padding: 14px;
-    border: 2px solid $mainColor2;
-    color: $mainColor2;
-    background-color: $mainColor1;
-    text-align: center;
-    letter-spacing: 1px;
-    border-radius: 5px;
-} */
 .btnText:hover {
-    background-color: #ca6074;
-    color: white;
+    background-color: $mainColor2;
+    color: $mainColor1;
 } 
 .btnText {
-    background-color: white;
-    color: #ca6074;
+    background-color: $mainColor1;
+    color: $mainColor2;
     display: flex;
     align-items: center;
     width: 120px;
@@ -70,26 +52,24 @@
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 550;
-    border: 2px solid #ca6074;
+    border: 2px solid $mainColor2;
     justify-content: center;
     text-align: center;
 }
 .cakeConstructor {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 .cupcakeImage {
-    width: 500px;
-    height: 500px;
-    margin: 60px 50px;
+    width: 100%;
+    max-width: 400px;
+    padding-bottom: 100%;
+    margin: auto;
     position: relative;
-}
-@media (max-width: 1100px) {
-    .text {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
 }
 .thumb img:hover {
     border: 2px solid $mainColor2;
@@ -124,6 +104,9 @@
 .thumb .imgBack {
     transform: rotateY(-180deg);
 }
+.thumb .imgFront {
+    transform: rotateY(0);
+}
 .thumb .imgFront, .thumb .imgBack {
     backface-visibility: hidden;
     transition: all 0.3s ease-in;
@@ -132,7 +115,7 @@
     box-sizing: border-box;
 }
 .cakeTitle {
-    color: white;
+    color: $mainColor1;
     font-size: 26px;
     font-family: $mainFont; 
     text-transform: uppercase;
@@ -141,15 +124,15 @@
     font-family: $textFont;
 }
 .ingredients span {
-    color: white;
+    color: $mainColor1;
     text-transform: uppercase; 
 }
 .price span {
-    color: white;
+    color: $mainColor1;
     text-transform: uppercase; 
 }
 .btnBuy {
-    background-color: white;
+    background-color: $mainColor1;
     color: $mainColor2;
     width: 150px;
     height: 50px;
@@ -167,21 +150,19 @@
     padding-bottom: 50px;
 }
 .base {
-    width: 300px;
+    width: 100%;
     position: absolute;
-    top: 25%;
-    left: 20%;
-}
-.base2 {
-    display: none;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .glaze {
-    width: 300px;
+    width: 100%;
     z-index: 2;
     position: absolute;
-    left: 20%;
-    top: 5.5%;
-    display: none;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
 }
 .cakeBase p, .cakeGlaze p {
     color: $mainColor2;
@@ -190,7 +171,9 @@
 .constructorCard {
     background-color: $mainColor2;
     height: 350px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px; 
+    margin: auto;
     cursor: pointer;
     border-radius: 5px;
     border: 2px solid $mainColor2;
@@ -200,44 +183,144 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    margin-right: 30px;
+    color: $mainColor1;
+}
+.cardBase, .cardGlaze {
+    color: $mainColor1;
+    font-size: 26px;
+    font-family: $mainFont;
+    text-transform: uppercase;
+}
+.cardGlaze {
+    height: 94px;
+}
+.builder-container h1 {
+    margin-bottom: 0;
+    margin: auto;
+}
+.cakesGallery {
+    margin-bottom: 80px;
+}
+.builder-container {
+    max-width: 1400px;
+    margin: auto;
 }
 .cakeBaseGlaze {
-    margin-right: 80px;
+   max-width: 250px;
+   margin: auto;
 }
-@media (max-width: 1360px) {
-    .cupcakeImage {
-        margin: 60px 40px 60px 0px;
+@media (max-width: 1320px) {
+    .btnText1 {
+        margin-left: 20px;
     }
-    .cakeBaseGlaze {
-        margin-right: 80px;
+    .btnText2 {
+        margin-right: 20px;
     }
-    .constructorCard {
+    .text {
+        margin-left: 20px;
         margin-right: 20px;
     }
 }
-@media (max-width: 1300px) {
-    .cupcakeImage {
-        margin: 60px 40px 60px 0px;
+@media (max-width: 991px) {
+    .mb-60-md {
+        margin-bottom: 60px;
     }
-    .cakeBaseGlaze {
-        margin-right: 80px;
+}
+@media (min-width: 768px) and (max-width: 1345px) {
+    .ingredients, .price {
+        font-size: 12px;
     }
-    .constructorCard {
+    .cakeTitle {
+        font-size: 18px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .btnText {
+        width: 200px;
+    }
+    .btnTextBlock {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .btnText1 {
+        margin-left: 20px;
+    }
+    .btnText2 {
         margin-right: 20px;
     }
-}
-@media (max-width: 1350px) {
-    .imgBack p {
-        font-size: smaller;
+    .text {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .ingredients, .price {
+        font-size: 12px;
+    }
+    .cakeTitle {
+        font-size: 18px;
+    }
+    .mb-60-md {
+        margin-bottom: 120px;
+    }
+    .cakeBaseGlaze {
+        margin-bottom: -30px;
+    }
+    .price2 {
+        font-size: 18px;
+    }
+    .cakesGallery {
+        margin-bottom: 50px;
     }
 }
-
-
-
-
-
-
-
-
+@media (min-width: 480px) and (max-width: 767px) {
+    .cupcakeImage {
+        padding-bottom: 0;
+        height: 480px;
+    }
+}
+@media (max-width: 767px) {
+    .productionText {
+        flex-direction: column;
+    }
+    .text {
+        margin: 15px 25px;
+    }
+    .cakeBase p {
+        margin-bottom: 0.3rem;
+    }
+    .cakeBase {
+        padding-bottom: 20px;
+    }
+    .flex-reverse-sm {
+        flex-direction: column-reverse;
+    }
+    .cakeConstructor {
+        padding-top: 30px;
+        margin-bottom: 40px;
+    }
+    .mb-60-md {
+        margin-bottom: 0;
+    }
+    .cakeConstructor {
+        margin-top: 0;
+    }
+    .builder-container h1 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .cakesGallery {
+        margin-bottom: 50px;
+    }
+    .btnText1 {
+        margin-left: 0;
+    }
+    .btnText2 {
+        margin-right: 0;
+    }
+}
+@media (max-width: 479px) {
+    .cupcakeImage {
+        padding-bottom: 0;
+        max-width: 300px;
+        height: 360px;
+    }
+}
