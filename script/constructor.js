@@ -6,7 +6,7 @@ let customId = 1;
 
 const customProduct = {
     id: `custom-${customId}`,
-    img: '/images/cakeConstructor.png',
+    img: './images/cakeConstructor.png',
     ingredients: null,
     price: 50,
     name: 'Вершкова основа, Капкейк без глазурі',
