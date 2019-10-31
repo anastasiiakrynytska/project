@@ -64,6 +64,9 @@
     height: 24px;
     font-size: 24px;
 }
+.popup-close:hover {
+    color: $mainColor2;
+}
 .popup .page-header {
     margin-bottom: 10px;
     margin-top: 0;
@@ -166,6 +169,9 @@
     vertical-align: top;
     cursor: pointer;
 }
+.product__button-increase:hover, .product__button-decrease:hover {
+    border: 1px solid #9e9c9c;
+}
 .product__button-remove {
     display: inline-block;
     vertical-align: middle;
@@ -175,6 +181,9 @@
     cursor: pointer;
     font-size: 24px;
     margin-left: 6px;
+}
+.product__button-remove:hover {
+    color: $mainColor2;
 }
 .product__price-column {
     width: 75px;
@@ -206,11 +215,10 @@
     text-align: center;
     position: relative;
 }
-
 .popup.cart .button {
     min-width: 280px;
     margin: 0 0 10px;
-    background-color: $mainColor2;
+    background-color: #ca6074e0;
     color: #ffffff;
     font-size: 12px;
     font-weight: 500;
@@ -220,6 +228,9 @@
     cursor: pointer;
     border-radius: 3px; 
 }
+.popup.cart .button:hover {
+    background-color: $mainColor2;
+}
 .link {
     cursor: pointer;
     font-size: 13px;
@@ -227,6 +238,9 @@
     line-height: 1;
     display: inline-block;
     border-bottom: 1px solid #d8d8d8;
+}
+.link:hover {
+    border-bottom: 1px solid $mainColor2;
 }
 .popup:after {
     content: '';
@@ -283,12 +297,13 @@
 }
 .form-group input.form-control {
     &:focus {
-        outline-width: 5px;
-        box-shadow: none;
-        outline-offset: -2px;
-        outline-color: $mainColor2;
-        outline-style: auto;
+       outline: none;
     }
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: $mainColor2;
 }
 .popup.order .button {
     margin-top: 15px;

@@ -87,8 +87,11 @@
     font-family: $textFont;
 }
 #submitButton {
-    background: $mainColor2;
+    background-color: #ca6074b8;
     margin-bottom: 0;
+}
+#submitButton:hover {
+    background-color: $mainColor2;
 }
 .adress-tel-email li:hover {
     color: $mainColor2;
@@ -127,7 +130,7 @@ a, a:hover {
 }  
 input, textarea {
     &:focus {
-        outline-color: $mainColor2;
+        outline: none;
     }
 }
 @media (max-width: 1330px) {
@@ -205,5 +208,8 @@ input, textarea {
         max-height: 200px;
         width: 100%;
         height: 100%;
+    }
+    .transparent {
+        padding: 35px 25px 35px 25px;
     }
 }

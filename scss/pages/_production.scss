@@ -132,7 +132,7 @@
     text-transform: uppercase; 
 }
 .btnBuy {
-    background-color: $mainColor1;
+    background-color: #ffffffe0;
     color: $mainColor2;
     width: 150px;
     height: 50px;
@@ -141,7 +141,7 @@
     font-weight: 550;
 }
 .btnBuy:hover {
-    border: 1px solid $mainColor2;
+    background-color: $mainColor1;
 }
 .btnBuy:focus {
     outline-color: unset;
